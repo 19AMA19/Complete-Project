@@ -1,12 +1,25 @@
-
 <%-include('../partials/header')-%>
 <%-include('../partials/navbar')-%>
 
-<div class="container">
-    <div class="row">
-        <h2 class="text-dark">
-            <h1>Show Single Event</h1>
-        </h2>
+
+<div class="container ">
+    <div class="row ">
+        <div class="row mt-5 justify-content-center">
+            <div class="col-sm-6 col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title"><%=event.title%></h5>
+                        <hr>
+                        <p class="card-text"><%=event.describtion%></p>
+                        <p class="card-text"><%=event.location%></p>
+                        <h6>Date <span class="badge bg-secondary"> <%=event.date.toDateString()%> </span></h6>
+                        <br>
+                        <a href="<%='/events/edit/' + event.id%>" class="btn btn-warning">Update</a>
+                        <button id="deleteBtn" data-id="<%=event.id%>" class="btn btn-danger" onclick="deleteEvent()">Delete</button>
+                    </div>
+                 </div>
+            </div>
+        </div>
     </div>
 </div>
 

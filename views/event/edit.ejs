@@ -3,10 +3,47 @@
 <%-include('../partials/navbar')-%>
 
 <div class="container">
-    <div class="row">
-        <h2 class="text-dark">
-            <h1>Edit Event</h1>
-        </h2>
+    <div class="row mt-5 justify-content-center">
+        <div class="col-sm-6 col-md-6">
+        <h3 class="text-center ">Edit The Event</h3>
+        <br>
+        <hr>
+        <br>
+      
+
+        <form action="/events/update" method="post">
+            
+            <input type="hidden" value="<%=event.id%>" name="id">
+
+            <div class="form-floating">
+                <input name="title" type="text" value="<%=event.title%>" class="form-control" id="floatingInput1" placeholder="Event Title">
+                <label for="floatingInput1">Event Title</label>
+            </div>
+            <br>
+            <div class="form-floating">
+                <textarea name="describtion"  class="form-control" placeholder="Describtion" id="floatingTextarea2" style="height: 100px"><%=event.describtion%></textarea>
+                <label for="floatingTextarea2">Describtion</label>
+              </div>
+            <br>
+            <div class="form-floating">
+                <input name="location" value="<%=event.location%>"  type="text" class="form-control" id="floatingInput3" placeholder="Event Location">
+                <label for="floatingInput3">Event Location</label>
+            </div>
+            <br>
+            <div class="form-floating">
+                <input name="date" value="<%=date%>" type="date" class="form-control" id="floatingInput4" placeholder="Event Date">
+                <label for="floatingInput4">Event Date</label>
+            </div>
+            <br>
+            <div class="d-grid gap-2">
+                <button  class="btn btn-primary" type="submit">Update</button>
+            </div>
+        </form>
+        <br>
+        <div class="col-md-6, mt-2">
+            <%-include('../partials/flashMessages')-%>
+        </div>
+        </div>
     </div>
 </div>
 
